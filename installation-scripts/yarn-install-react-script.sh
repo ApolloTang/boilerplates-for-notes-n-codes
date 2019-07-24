@@ -37,6 +37,7 @@ yarn add -D \
 
 yarn add \
     @babel/polyfill \
+    core-js@3 \
     react \
     react-dom
 
