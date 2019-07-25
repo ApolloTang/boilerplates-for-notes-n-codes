@@ -42,9 +42,24 @@ yarn add \
     react-dom
 
 
-yarn add \
-    @emotion/core \
-    @emotion/styled \
-    babel-plugin-emotion \
+#emotion with babel-plugin-emotion
+  yarn add \
+      @emotion/core \
+      @emotion/styled \
+      babel-plugin-emotion \
 
+  yarn remove -D \
+      @emotion/babel-preset-css-prop
+
+
+#emotion with @emotion/babel-preset-css-prop
+  yarn add \
+      @emotion/core \
+      @emotion/styled \
+
+  yarn add -D \
+      @emotion/babel-preset-css-prop
+
+  yarn remove \
+      babel-plugin-emotion \
 
