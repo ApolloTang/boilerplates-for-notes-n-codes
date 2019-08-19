@@ -17,8 +17,8 @@ module.exports = (api) => {
         'modules': isTest ? 'commonjs' : false
       }
     ],
-    '@babel/preset-react',
     '@babel/preset-typescript',
+    '@babel/preset-react',
     [
       // ensure that @emotion/babel-preset-css-prop is inserted after
       // @babel/preset-react or @babel/preset-typescript.
