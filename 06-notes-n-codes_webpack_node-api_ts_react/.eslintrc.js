@@ -28,11 +28,13 @@ module.exports = {
 
     ],
     "rules": {
-        "react-hooks/rules-of-hooks": "error",
-        "react/jsx-uses-react": "error", // https://github.com/eslint/eslint/issues/11183
-        "react/jsx-uses-vars": ["error"], // https://github.com/eslint/eslint/issues/8226
+      "react-hooks/rules-of-hooks": "error",
+      "react/jsx-uses-react": "error", // https://github.com/eslint/eslint/issues/11183
+      "react/jsx-uses-vars": ["error"], // https://github.com/eslint/eslint/issues/8226
 
-      "semi": ["off", "never"],
-      "quotes": ["error", "single"]
+      "semi": ["error", "never"],
+      "quotes": [1, "single"],
+      "indent": ["off", 2],
+      "no-unused-vars": 1
     }
 };

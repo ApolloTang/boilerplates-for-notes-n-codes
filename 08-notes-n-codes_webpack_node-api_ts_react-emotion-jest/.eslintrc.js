@@ -37,9 +37,9 @@ module.exports = {
       "emotion/import-from-emotion": "error",
       "emotion/styled-import": "error",
 
-      "semi": ["off", "never"],
-      "quotes": ["error", "single"]
-
-
+      "semi": ["error", "never"],
+      "quotes": [1, "single"],
+      "indent": ["off", 2],
+      "no-unused-vars": 1
     }
 };
