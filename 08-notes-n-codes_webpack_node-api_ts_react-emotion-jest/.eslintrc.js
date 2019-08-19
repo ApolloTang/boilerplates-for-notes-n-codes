@@ -2,8 +2,8 @@ module.exports = {
     "parser": "@typescript-eslint/parser",
     "env": {
         "browser": true,
-        "es6": true,
-        "node": true
+        "node": true, // https://stackoverflow.com/questions/49789177/module-is-not-defined-and-process-is-not-defined-in-eslint-in-visual-studio-code
+        "es6": true
     },
     "extends": [
       "eslint:recommended",
