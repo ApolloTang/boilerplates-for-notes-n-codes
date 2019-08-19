@@ -1,5 +1,5 @@
 
-// const isProd = String(process.env.NODE_ENV) === 'production'
+
 
 module.exports = (api) => {
   api.cache(true)
@@ -14,7 +14,7 @@ module.exports = (api) => {
                          // https://github.com/babel/babel/issues/9872
                          // so we will use corejs@2 instead
         'corejs': 2,
-        'modules': isTest ? 'commonjs' : false
+        'modules': false
       }
     ],
     "@babel/preset-typescript",
