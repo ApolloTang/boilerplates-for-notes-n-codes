@@ -1,12 +1,11 @@
 // Copyright (c) 2014-present, Facebook, Inc. All rights reserved.
 
-/// <reference path="./typings/react/react.d.ts" />
 
-import * as React from 'react';
+import * as React from 'react'
 
 interface CheckboxWithLabelProps {
-  labelOff: string;
-  labelOn: string;
+  labelOff: string
+  labelOn: string
 }
 
 interface CheckboxWithLabelState {
@@ -18,8 +17,8 @@ class CheckboxWithLabel extends React.Component<
   CheckboxWithLabelState
 > {
   constructor(props: CheckboxWithLabelProps) {
-    super(props);
-    this.state = {isChecked: false};
+    super(props)
+    this.state = {isChecked: false}
   }
 
   render() {
@@ -34,8 +33,8 @@ class CheckboxWithLabel extends React.Component<
         />
         {this.state.isChecked ? this.props.labelOn : this.props.labelOff}
       </label>
-    );
+    )
   }
 }
 
-export default CheckboxWithLabel;
+export default CheckboxWithLabel
