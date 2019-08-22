@@ -17,17 +17,17 @@ module.exports = (api) => {
         'modules': false
       }
     ],
-    "@babel/preset-typescript",
-    "@babel/preset-react",
-  ];
+    '@babel/preset-typescript',
+    '@babel/preset-react',
+  ]
 
   const plugins = [
     '@babel/proposal-class-properties',
     '@babel/plugin-syntax-dynamic-import',
-  ].filter(Boolean);
+  ].filter(Boolean)
 
   return {
     presets,
     plugins
-  };
+  }
 }

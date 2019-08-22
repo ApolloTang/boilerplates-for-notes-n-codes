@@ -36,5 +36,14 @@ module.exports = {
       "quotes": [1, "single"],
       "indent": ["off", 2],
       "no-unused-vars": 1
-    }
+    },
+    "overrides": [
+      {
+        "files": ["**/*.ts", "**/*.tsx"],
+        "parser": "@typescript-eslint/parser",
+        "rules": {
+          "no-undef": "off" // https://github.com/eslint/typescript-eslint-parser/issues/437
+        }
+      }
+    ]
 };
