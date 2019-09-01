@@ -60,6 +60,7 @@
     "test": "jest --watchAll",
     "t:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand",
     "t:coverage": "jest --coverage",
-    "clearCache": "jest --clearCache"
+    "clearCache": "jest --clearCache",
+    "lint": "eslint --config .eslintrc.js \"src/**/*@(.js|.jsx|.ts|.tsx)\""
   }
 }
