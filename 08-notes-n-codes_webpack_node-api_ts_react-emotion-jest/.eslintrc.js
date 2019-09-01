@@ -44,6 +44,9 @@ module.exports = {
       "@typescript-eslint/type-annotation-spacing": "off",
       "@typescript-eslint/camelcase": "off",
       "@typescript-eslint/no-var-requires": "off",
+      "@typescript-eslint/class-name-casing": ["off", {
+        "allowUnderscorePrefix":true
+      }],
 
       "react-hooks/rules-of-hooks": "error",
       "react/jsx-uses-react": "error",        // https://github.com/eslint/eslint/issues/11183
