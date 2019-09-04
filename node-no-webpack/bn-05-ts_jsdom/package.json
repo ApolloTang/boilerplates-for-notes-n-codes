@@ -16,17 +16,20 @@
     "@babel/preset-typescript": "^7.3.3",
     "@types/jsdom": "^12.2.4",
     "@types/node": "10",
-    "eslint": "^6.2.0",
-    "nodemon": "^1.19.1",
-    "typescript": "^3.5.3"
+    "@typescript-eslint/eslint-plugin": "^2.1.0",
+    "@typescript-eslint/parser": "^2.1.0",
+    "eslint": "^6.3.0",
+    "nodemon": "^1.19.2",
+    "typescript": "^3.6.2"
   },
   "dependencies": {
-    "core-js": "^3.2.1",
+    "core-js": "2",
     "jsdom": "^15.1.1",
     "regenerator-runtime": "^0.13.3"
   },
   "scripts": {
     "dev": "babel-node --extensions '.ts' ",
-    "dev:wh": "nodemon --exec babel-node --extensions '.ts' "
+    "dev:w": "nodemon --exec babel-node --extensions '.ts' ",
+    "lint": "eslint --config .eslintrc.js \"src/**/*@(.js|.ts)\""
   }
 }
