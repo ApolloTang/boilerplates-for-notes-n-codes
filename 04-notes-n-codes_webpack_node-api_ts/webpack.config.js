@@ -21,10 +21,10 @@ module.exports = ({pathToEntryFile}) => {
       rules: [
         {
           test: /\.m?(j|t)s?$/,
-          exclude: /(node_modules)/,
-          use: {
-            loader: 'babel-loader'
-          }
+          use: [
+            { loader: 'babel-loader' }
+          ],
+          exclude: /node_modules/  // <---- very important
         }
       ]
     },
@@ -37,4 +37,4 @@ module.exports = ({pathToEntryFile}) => {
 
   // console.log(configOut)
   return configOut
-};
+}
