@@ -21,10 +21,10 @@ module.exports = ({pathToEntryFile}) => {
       rules: [
         {
           test: /\.m?(j|t)sx?$/,
-          exclude: /(node_modules)/,
-          use: {
-            loader: 'babel-loader'
-          }
+          use: [
+            { loader: 'babel-loader' }
+          ],
+          exclude: /node_modules/  // <---- very important
         }
       ]
     },

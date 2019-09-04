@@ -7,8 +7,10 @@ module.exports = {
     },
     "extends": [
       "eslint:recommended",
-      // "airbnb"
+      // "airbnb",
 
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended",
     ],
     "globals": {
         "Atomics": "readonly",
@@ -28,14 +30,28 @@ module.exports = {
 
     ],
     "rules": {
-      "react-hooks/rules-of-hooks": "error",
-      "react/jsx-uses-react": "error", // https://github.com/eslint/eslint/issues/11183
-      "react/jsx-uses-vars": ["error"], // https://github.com/eslint/eslint/issues/8226
-
-      "semi": ["error", "never"],
-      "quotes": [1, "single"],
+      "semi": [1, "never"],
+      "quotes": ["warn", "single"],
       "indent": ["off", 2],
-      "no-unused-vars": 1
+      "no-unused-vars": "warn",
+
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/explicit-function-return-type": "off", // without this you will get incosistence behaviour compare to barebone @typescript-eslint
+      "@typescript-eslint/no-use-before-define": "off",
+      "@typescript-eslint/member-delimiter-style": ["warn", {
+        "multiline":{"delimiter":"none","requireLast":true}, "singleline":{"delimiter":"semi","requireLast":false} // single line config is not working
+      }],
+      "@typescript-eslint/type-annotation-spacing": "off",
+      "@typescript-eslint/camelcase": "off",
+      "@typescript-eslint/no-var-requires": "off",
+      "@typescript-eslint/class-name-casing": ["off", {
+        "allowUnderscorePrefix":true
+      }],
+
+      "react-hooks/rules-of-hooks": "error",
+      "react/jsx-uses-react": "error",        // https://github.com/eslint/eslint/issues/11183
+      "react/jsx-uses-vars": ["error"],       // https://github.com/eslint/eslint/issues/8226
+
     },
     "overrides": [
       {
