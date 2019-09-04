@@ -33,12 +33,11 @@ module.exports = (api) => {
         autoLabel: !isProd,
         labelFormat: '[filename]--[local]',
       }
-   ]
+    ]
   ];
 
   const plugins = [
     '@babel/proposal-class-properties',
-
   ].filter(Boolean);
 
   return {
