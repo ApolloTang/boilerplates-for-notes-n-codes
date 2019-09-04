@@ -44,12 +44,12 @@ module.exports = ({pathToEntryFile}) => {
           ],
         },
         {
-          test: /\.(j|t)sx?$/,
+          test: /\.m?(j|t)sx?$/,
           use: [
             { loader: 'babel-loader' }
           ],
           exclude: /node_modules/  // <---- very important
-        },
+        }
       ]
     },
     plugins: [
