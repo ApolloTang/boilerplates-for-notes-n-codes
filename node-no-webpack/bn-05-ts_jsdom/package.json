@@ -28,8 +28,8 @@
     "regenerator-runtime": "^0.13.3"
   },
   "scripts": {
-    "dev": "babel-node --extensions '.ts' ",
-    "dev:w": "nodemon --exec babel-node --extensions '.ts' ",
+    "dev": "babel-node --extensions '.ts,.js' ",
+    "dev:w": "nodemon --exec babel-node --extensions '.ts,.js' ",
     "lint": "eslint --config .eslintrc.js \"src/**/*@(.js|.ts)\""
   }
 }
