@@ -32,6 +32,12 @@ function start(port, host) {
     host, port
     // port and host is required for WDS.addDevServerEntrypoints
     // Ref: https://github.com/webpack/webpack-dev-server/issues/1095
+
+    , historyApiFallback: true
+    // for historyApiFallback to work
+    // must also specified output.publicPath
+    // in webpack.config.js
+
     , open: true
   };
 
