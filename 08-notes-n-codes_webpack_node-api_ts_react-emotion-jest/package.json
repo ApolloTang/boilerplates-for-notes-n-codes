@@ -61,10 +61,11 @@
   "scripts": {
     "dev": "node dev-server ",
     "compile": "NODE_ENV=test webpack",
-    "test": "jest --watchAll",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "t": "jest --watchAll",
+    "t:clearCache": "jest --clearCache",
     "t:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand",
-    "t:coverage": "jest --coverage",
-    "clearCache": "jest --clearCache",
     "lint": "eslint --config .eslintrc.js \"src/**/*@(.js|.jsx|.ts|.tsx)\""
   }
 }
