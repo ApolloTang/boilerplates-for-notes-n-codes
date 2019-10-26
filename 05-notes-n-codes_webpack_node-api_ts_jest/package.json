@@ -22,6 +22,6 @@
     "webpack-dev-server": "^3.9.0"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.6.0"
+    "core-js": "2"
   }
 }
