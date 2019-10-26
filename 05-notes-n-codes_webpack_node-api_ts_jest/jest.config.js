@@ -3,7 +3,7 @@ const {defaults} = require('jest-config');
 module.exports = {
 
   testPathIgnorePatterns: [
-    '/nodule_module/',
+    '/node_modules/',
   ],
 
   projects : [
