@@ -1,7 +1,7 @@
 const isTest = String(process.env.NODE_ENV) === 'test'
 
 module.exports = function (api) {
-  api.cache(true);
+  api.cache(true)
 
   const presets = [
     [
@@ -21,11 +21,15 @@ module.exports = function (api) {
   ];
 
   const plugins = [
-    '@babel/plugin-proposal-class-properties'
-  ];
+    '@babel/proposal-class-properties',
+    // Next two line:
+    // not sure if we still need to handle syntax-dynamic-import, sofar it works without it
+      // '@babel/plugin-syntax-dynamic-import',
+      // isTest ? 'babel-plugin-dynamic-import-node' : null
+  ].filter(Boolean)
 
   return {
     presets,
     plugins
-  };
+  }
 }
