@@ -13,7 +13,12 @@
     "@babel/preset-env": "^7.6.3",
     "@babel/preset-typescript": "^7.6.0",
     "@types/jest": "^24.0.20",
+    "@types/node": "^12.11.7",
+    "@typescript-eslint/eslint-plugin": "^2.5.0",
+    "@typescript-eslint/parser": "^2.5.0",
     "babel-loader": "^8.0.6",
+    "eslint": "^6.6.0",
+    "eslint-plugin-jest": "^22.20.1",
     "find-free-port": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
     "jest": "^24.9.0",
@@ -28,6 +33,12 @@
     "regenerator-runtime": "^0.13.3"
   },
   "scripts": {
-    "dev": "node dev-server "
+    "dev": "node dev-server ",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "t": "jest --watchAll",
+    "t:clearCache": "jest --clearCache",
+    "t:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand",
+    "lint": "eslint --config .eslintrc.js \"src/**/*@(.js|.jsx|.ts|.tsx)\""
   }
 }
