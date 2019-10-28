@@ -27,13 +27,16 @@
     "regenerator-runtime": "^0.13.3"
   },
   "scripts": {
-    "n": "babel-node --extensions '.ts,.js' ",
-    "n:w": "nodemon --exec babel-node --extensions '.ts,.js' ",
-    "test": "jest",
-    "test:coverage": "jest --coverage",
+    "t1": "jest ",
+    "t1:w": "jest --watch ",
+    "t:coverage": "jest --coverage",
     "t": "jest --watchAll",
     "t:clearCache": "jest --clearCache",
     "t:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand",
-    "lint": "eslint --config .eslintrc.js \"src/**/*@(.js|.jsx|.ts|.tsx)\""
+    "lint": "eslint --config .eslintrc.js \"src/**/*@(.js|.ts)\"",
+    "tsc": "tsc --skipLibCheck",
+    "tsc:w": "tsc --skipLibCheck -w",
+    "n": "babel-node --extensions '.ts,.js' ",
+    "n:w": "nodemon --exec babel-node --extensions '.ts,.js' "
   }
 }
