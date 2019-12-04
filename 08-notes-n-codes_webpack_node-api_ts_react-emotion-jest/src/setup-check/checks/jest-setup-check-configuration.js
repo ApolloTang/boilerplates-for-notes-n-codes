@@ -1,7 +1,7 @@
 module.exports = () => {
   const configOut = {
-    testFolderPath: '../../../../test'
-  };
+    testFolderPath: '../../../../test-setup'
+  }
 
-  return configOut;
-};
+  return configOut
+}

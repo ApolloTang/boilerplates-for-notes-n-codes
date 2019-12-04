@@ -62,7 +62,7 @@
     "@emotion/core": "^10.0.22",
     "@emotion/styled": "^10.0.23",
     "connected-react-router": "^6.6.1",
-    "core-js": "^3.4.7",
+    "core-js": "2.6.10",
     "deep-freeze": "^0.0.1",
     "history": "^4.10.1",
     "lodash": "^4.17.15",
