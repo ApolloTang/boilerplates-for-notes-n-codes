@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "noEmit": true,
+    "lib": [
+      "es7"
+    ],
+    "strictNullChecks": true
+  }
+}
