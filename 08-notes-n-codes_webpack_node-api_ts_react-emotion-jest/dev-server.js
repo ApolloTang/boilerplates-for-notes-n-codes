@@ -1,7 +1,7 @@
 const webpackDevServer = require('webpack-dev-server')
 const webpack = require('webpack')
 const webpackConfigFn = require('./webpack.config.js')
-const fp = require("find-free-port")
+const fp = require('find-free-port')
 
 
 const argv = process.argv
@@ -24,7 +24,7 @@ fp(PORT_LOWER, PORT_UPPER,  function(err, freePort){
   if (freePort) {
     start(freePort, HOST)
   }
-});
+})
 
 
 function start(port, host) {
@@ -39,7 +39,7 @@ function start(port, host) {
     // in webpack.config.js
 
     , open: true
-  };
+  }
 
   const webpackConfig = webpackConfigFn({ pathToEntryFile: argv1 })
 
@@ -50,5 +50,5 @@ function start(port, host) {
 
   server.listen(port, host, () => {
     console.log(`Starting server on http://${host}:${port}`)
-  });
+  })
 }

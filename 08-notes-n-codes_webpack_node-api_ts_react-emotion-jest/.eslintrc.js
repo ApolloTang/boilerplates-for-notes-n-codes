@@ -47,6 +47,7 @@ module.exports = {
       "@typescript-eslint/class-name-casing": ["off", {
         "allowUnderscorePrefix":true
       }],
+      "@typescript-eslint/ban-ts-ignore": "off",
 
       "react-hooks/rules-of-hooks": "error",
       "react/jsx-uses-react": "error",        // https://github.com/eslint/eslint/issues/11183

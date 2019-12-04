@@ -1,5 +1,19 @@
-const isTest = String(process.env.NODE_ENV) === 'test';
+const isTest = String(process.env.NODE_ENV) === 'test'
 const isProd = String(process.env.NODE_ENV) === 'production'
+const isBabelNode = String(process.env.BABEL_ENV) === 'babelNode'
+
+const modulesType = ( isBabelNode, isTest ) => {
+  switch (true) {
+    case (isBabelNode): {
+      return 'commonjs'
+    }
+    case (isTest): {
+      return 'commonjs'
+    }
+    default:
+      return false
+  }
+}
 
 module.exports = (api) => {
   api.cache(true)
@@ -8,13 +22,13 @@ module.exports = (api) => {
       '@babel/preset-env',
       {
         'debug': false,
-        'targets': {'ie':'11'},
+        'targets': isBabelNode ? {'node':'current'} :  {'ie':'11'},
         'useBuiltIns': 'usage',
         // 'corejs': 3,  // dynamic import is broken:
                          // https://github.com/babel/babel/issues/9872
                          // so we will use corejs@2 instead
         'corejs': 2,
-        'modules': isTest ? 'commonjs' : false
+        'modules': modulesType(isBabelNode, isTest)
       }
     ],
     '@babel/preset-typescript',
@@ -34,13 +48,13 @@ module.exports = (api) => {
         labelFormat: '[filename]--[local]',
       }
    ]
-  ];
+  ]
 
   const plugins = [
     '@babel/proposal-class-properties',
     '@babel/plugin-syntax-dynamic-import',
     isTest ? 'babel-plugin-dynamic-import-node' : null
-  ].filter(Boolean);
+  ].filter(Boolean)
 
   return {
     presets,
