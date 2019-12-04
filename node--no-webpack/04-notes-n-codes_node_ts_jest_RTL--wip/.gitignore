@@ -1,9 +1,0 @@
-node_modules
-dist
-*.log
-coverage
-
-_gitignore
-
-
-
