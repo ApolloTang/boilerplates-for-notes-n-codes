@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "engines": {
-    "node": "10"
+    "node": ">=12"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.4",
@@ -47,6 +47,8 @@
     "jest": "^24.9.0",
     "jest-emotion": "^10.0.26",
     "jest-watch-typeahead": "^0.4.2",
+    "jsdom": "^16.0.1",
+    "jsdom-global": "^3.0.2",
     "node-fetch": "^2.6.0",
     "nodemon": "^2.0.1",
     "prop-types": "^15.7.2",
@@ -66,6 +68,7 @@
     "deep-freeze": "^0.0.1",
     "history": "^4.10.1",
     "lodash": "^4.17.15",
+    "query-string": "^6.10.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-loadable": "^5.5.0",
