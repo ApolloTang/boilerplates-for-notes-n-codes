@@ -36,7 +36,7 @@ module.exports = {
     "react/jsx-uses-react": "error",        // https://github.com/eslint/eslint/issues/11183
     "react/jsx-uses-vars": ["error"],       // https://github.com/eslint/eslint/issues/8226
 
-    "jest/expect-expect": "off"
+    "jest/expect-expect": "off",
     // "emotion/jsx-import": "error",       // not needed because we are using babel plugin
     // "emotion/no-vanilla": "error",       // not needed because we are using react
     "emotion/import-from-emotion": "error",
