@@ -13,7 +13,7 @@ module.exports = function (api) {
         // 'corejs': 3,  // dynamic import is broken:
                          // https://github.com/babel/babel/issues/9872
                          // so we will use corejs@2 instead
-        'corejs': 2,
+        'corejs': 3,
         'modules': isTest ? 'commonjs' : false
       }
     ],
