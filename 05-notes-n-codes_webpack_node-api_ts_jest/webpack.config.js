@@ -37,4 +37,4 @@ module.exports = ({pathToEntryFile}) => {
 
   // console.log(configOut)
   return configOut
-};
+}

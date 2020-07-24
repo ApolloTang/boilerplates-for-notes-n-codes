@@ -14,12 +14,12 @@ module.exports = {
   //@ Scripts to run before jest is loaded
   setupFiles: [
     '<rootDir>/node_modules/regenerator-runtime/runtime', // https://github.com/facebook/jest/issues/5698
-    '<rootDir>/test/jest.init.js'
+    '<rootDir>/test-setup/jest.init.js'
   ],
 
   //@ Scripts to run after jest is loaded
   setupFilesAfterEnv: [
-    require.resolve('./test/setup-tests.js'),
+    require.resolve('./test-setup/setup-tests.js'),
   ],
 
   watchPlugins: [
