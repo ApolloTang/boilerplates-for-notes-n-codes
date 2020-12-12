@@ -24,9 +24,6 @@ module.exports = (api) => {
         'debug': false,
         'targets': isBabelNode ? {'node':'current'} :  {'ie':'11'},
         'useBuiltIns': 'usage',
-        // 'corejs': 3,  // dynamic import is broken:
-                         // https://github.com/babel/babel/issues/9872
-                         // so we will use corejs@2 instead
         'corejs': 3,
         'modules': modulesType(isBabelNode, isTest)
       }
