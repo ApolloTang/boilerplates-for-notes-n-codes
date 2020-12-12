@@ -17,10 +17,10 @@ module.exports = {
     es6: true
   },
   extends: [
-    'eslint:recommended', 
+    'eslint:recommended',
     'plugin:jest/recommended'
   ],
-  plugins: ['react', 'react-hooks', 'emotion'],
+  plugins: ['react', 'react-hooks', '@emotion'],
   rules: {
     semi: ['warn', 'never'],
     quotes: ['warn', 'single'],
