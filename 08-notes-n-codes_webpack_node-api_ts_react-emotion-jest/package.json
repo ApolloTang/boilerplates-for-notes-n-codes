@@ -68,7 +68,7 @@
     "core-js": "^3.6.5",
     "deep-freeze": "^0.0.1",
     "history": "^5.0.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "query-string": "^6.13.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
