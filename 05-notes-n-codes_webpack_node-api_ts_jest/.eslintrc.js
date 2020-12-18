@@ -31,7 +31,8 @@ module.exports = {
     'no-unused-vars': 'warn',
     strict: ['error', 'never'],
 
-    'jest/expect-expect': 'off'
+    'jest/expect-expect': 'off',
+    '@typescript-eslint/no-var-requires': 'off',  // allow require for case where we can co-locate usage.
   },
   overrides: [
     {
@@ -61,7 +62,6 @@ module.exports = {
         ],
         '@typescript-eslint/type-annotation-spacing': 'off',
         '@typescript-eslint/camelcase': 'off',
-        '@typescript-eslint/no-var-requires': 'off',
         '@typescript-eslint/class-name-casing': [
           'off',
           {

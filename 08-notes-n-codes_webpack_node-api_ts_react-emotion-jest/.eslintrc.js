@@ -28,11 +28,14 @@ module.exports = {
     'no-unused-vars': 'warn',
     strict: ['error', 'never'],
 
+
     'react-hooks/rules-of-hooks': 'error',
     'react/jsx-uses-react': 'error', // https://github.com/eslint/eslint/issues/11183
     'react/jsx-uses-vars': ['error'], // https://github.com/eslint/eslint/issues/8226
 
     'jest/expect-expect': 'off',
+    '@typescript-eslint/no-var-requires': 'off',  // allow require for case where we can co-locate usage.
+    
     // "emotion/jsx-import": "error",       // not needed because we are using babel plugin
     // "emotion/no-vanilla": "error",       // not needed because we are using react
     'emotion/import-from-emotion': 'error',
