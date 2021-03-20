@@ -1,0 +1,25 @@
+{
+  "name": "babel-node",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Apollo Tang",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.12.16",
+    "@babel/core": "^7.12.16",
+    "@babel/node": "^7.12.16",
+    "@babel/preset-env": "^7.12.16",
+    "@babel/preset-typescript": "^7.12.16"
+  },
+  "scripts": {
+    "//1":"Exec a typescript file with node",
+    "n": "babel-node --extensions '.ts'",
+    "//2":"---------------------------------------------",
+    "//3":"Compile a typescript file with babel-node, output to terminal",
+    "c": "babel",
+    "//4":"---------------------------------------------",
+    "//5":"Compile a typescript file with node-babel, output save to out.js",
+    "co": "babel -o out.js"
+  }
+}
+
