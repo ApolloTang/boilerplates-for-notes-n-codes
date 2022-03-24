@@ -44,8 +44,8 @@ fs.readFile('package.json', (err, data) => {
       // 'pnpm add -D webpack-cli@^4.9.2',
       'pnpm add -D webpack-dev-server@^3.11.2',
       'pnpm add -D html-webpack-plugin@^4.3.0',
-      // 'pnpm add -D style-loader@^2.0.0',
-      // 'pnpm add -D css-loader@^5.2.7',
+      'pnpm add -D style-loader@^2.0.0',
+      'pnpm add -D css-loader@^5.2.7',
   ].forEach(
   c=>{
     exec(`${c}`, (error, stdout, stderr) => {
