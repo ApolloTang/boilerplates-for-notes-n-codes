@@ -15,7 +15,10 @@ module.exports = ({pathToEntryFile}) => {
       filename: 'bundle.js'
     },
     resolve: {
-      extensions: ['*', '.mjs', '.js', '.ts', '.jsx', '.tsx']
+      extensions: ['*', '.mjs', '.js', '.ts', '.jsx', '.tsx'],
+      alias: {
+        '~' : pathResolve(__dirname, pathToEntryFile)
+      }
     },
     module: {
       rules: [
