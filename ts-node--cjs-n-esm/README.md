@@ -1,0 +1,1 @@
+This playground has been set up to use global ts-node. There are two folders, one for commonjs and the other for ECMAScript module.
