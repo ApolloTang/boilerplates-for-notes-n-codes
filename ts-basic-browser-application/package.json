@@ -1,0 +1,28 @@
+{
+  "name": "basic-browser-application",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -fr ./dist",
+    "dev": "wp --mode development --config webpack/webpack.config.js",
+    "build": "pnpm clean && wp --mode production --config webpack/webpack.config.js",
+    "build:w": "nodemon -w \"./src/**/*.*\" -x \"pnpm build\"",
+    "dev:config": "nodemon -w \"./webpack/\" -w \"./tsconfig.json\" -w \"./src/**/*.*\" -x \"pnpm dev\""
+  },
+  "keywords": [],
+  "author": "Apollo Tang",
+  "license": "MIT",
+  "qutoName": "Apollo Tang",
+  "autherEmail": "tang.apollo@gmail.com",
+  "devDependencies": {
+    "webpack": "~5.74.0",
+    "webpack-nano": "~1.1.1",
+    "mini-html-webpack-plugin": "~3.1.3",
+    "webpack-merge": "~5.8.0",
+    "webpack-plugin-serve": "~1.6.0",
+    "ts-loader": "~9.3.1",
+    "typescript": "~4.7.4"
+  }
+}
