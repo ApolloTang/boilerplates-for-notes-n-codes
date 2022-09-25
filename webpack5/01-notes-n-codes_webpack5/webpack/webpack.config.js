@@ -24,12 +24,15 @@ const developmentConfig = merge([
 ])
 
 
-const getConfig = (mode, src, debug=false) => {
+const getConfig = (src) => {
+  const mode = 'development'
+  debug = false
+
   switch (mode) {
     case 'production':
       return merge(commonConfig(src), productionConfig, {mode: !debug ? mode : 'none'})
     case 'development':
-      return merge(commonConfig(src), developmentConfig, {mode})
+      return merge(commonConfig(src), developmentConfig, {mode: !debug ? mode : 'none'})
     default:
       throw new Error(`Trying to use an unknow mode, ${mode}`)
   }

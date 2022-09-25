@@ -4,7 +4,7 @@ const WebpackDevServer = require('webpack-dev-server');
 const {getConfig} = require("./webpack/webpack.config.js")
 
 const source = './src/01/main.js'
-const webpackConfig = getConfig('development', source)
+const webpackConfig = getConfig(source)
 console.dir(webpackConfig, {depth: 8})
 
 const webpackCompiler = CreateWebpackCompiler(webpackConfig);
