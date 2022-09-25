@@ -5,9 +5,9 @@ const part_loadCss = require('./webpack-part--load-css.js')
 const cssloader_postcss = require('./webpack-part--cssloader--postcss/')
 
 
-const commonConfig = (src) => merge([
+const commonConfig = ({ pathToEntryFile }) => merge([
   {
-    entry: [ src ]
+    entry: [ pathToEntryFile ]
   },
   part_page({title:'demo'}),
 ])
@@ -24,15 +24,15 @@ const developmentConfig = merge([
 ])
 
 
-const getConfig = (src) => {
+const getConfig = (opts) => {
   const mode = 'development'
   debug = false
 
   switch (mode) {
     case 'production':
-      return merge(commonConfig(src), productionConfig, {mode: !debug ? mode : 'none'})
+      return merge(commonConfig(opts), productionConfig, {mode: !debug ? mode : 'none'})
     case 'development':
-      return merge(commonConfig(src), developmentConfig, {mode: !debug ? mode : 'none'})
+      return merge(commonConfig(opts), developmentConfig, {mode: !debug ? mode : 'none'})
     default:
       throw new Error(`Trying to use an unknow mode, ${mode}`)
   }

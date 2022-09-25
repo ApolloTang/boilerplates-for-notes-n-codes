@@ -1,25 +1,52 @@
 const CreateWebpackCompiler = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
+const findFreePort = require('find-free-port')
+const pathResolve = require('path').resolve
+
 
 const {getConfig} = require("./webpack/webpack.config.js")
 
-const source = './src/01/main.js'
-const webpackConfig = getConfig(source)
-console.dir(webpackConfig, {depth: 8})
+const argv = process.argv
+// const node_fullPath = argv[0]
+// const thisFileName = argv[1]
+const argv1 = argv[2]
 
-const webpackCompiler = CreateWebpackCompiler(webpackConfig);
-const devServerOptions = {
-  // ...webpackConfig.devServer,
-  port: 9999,
-  host: '0.0.0.0',
-  open: true
-};
+const HOST = '0.0.0.0'
+const PORT_LOWER = 38800
+const PORT_UPPER = 38810
 
-const server = new WebpackDevServer(devServerOptions, webpackCompiler);
+findFreePort(PORT_LOWER, PORT_UPPER,  function(err, freePort){
+  if (err) {
+    console.log(err)
+    console.log(`Cannot find free port between ${PORT_LOWER}, ${PORT_UPPER}`)
+    return
+  }
+  if (freePort) {
+    start(freePort, HOST)
+  }
+})
 
-const runServer = async () => {
-  console.log('Starting server...');
-  await server.start();
-};
 
-runServer();
+function start(port, host) {
+  const webpackConfig = getConfig({ pathToEntryFile: './'+argv1 })
+  // console.dir(webpackConfig, {depth: 8})
+
+  const webpackCompiler = CreateWebpackCompiler(webpackConfig);
+  const devServerOptions = {
+    // ...webpackConfig.devServer,
+    port: port,
+    host: host,
+    open: true
+  };
+
+  console.log('xxxxxxxxxxxxxx', port)
+
+  const server = new WebpackDevServer(devServerOptions, webpackCompiler);
+
+  const runServer = async () => {
+    console.log('Starting server...');
+    await server.start();
+  };
+
+  runServer();
+}
