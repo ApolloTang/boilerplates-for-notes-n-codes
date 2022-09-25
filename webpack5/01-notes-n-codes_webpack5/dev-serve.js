@@ -15,7 +15,8 @@ const HOST = '0.0.0.0'
 const PORT_LOWER = 38800
 const PORT_UPPER = 38810
 
-findFreePort(PORT_LOWER, PORT_UPPER,  function(err, freePort){
+
+findFreePort(PORT_LOWER, PORT_UPPER, HOST, function(err, freePort){
   if (err) {
     console.log(err)
     console.log(`Cannot find free port between ${PORT_LOWER}, ${PORT_UPPER}`)
@@ -38,8 +39,6 @@ function start(port, host) {
     host: host,
     open: true
   };
-
-  console.log('xxxxxxxxxxxxxx', port)
 
   const server = new WebpackDevServer(devServerOptions, webpackCompiler);
 
