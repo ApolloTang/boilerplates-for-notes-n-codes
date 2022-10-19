@@ -12,7 +12,7 @@ const babelConfig = api => {
         modules: false,
       },
     ],
-    '@babel/preset-typescript',
+    // '@babel/preset-typescript',
   ];
 
   const plugins = [

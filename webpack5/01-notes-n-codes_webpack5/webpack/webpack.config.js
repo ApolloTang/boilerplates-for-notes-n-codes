@@ -6,11 +6,13 @@ const part_page = require('./webpack-part--page.js')
 const part_loadCss = require('./webpack-part--load-css.js')
 const part_loadImages = require('./webpack-part--load-images.js')
 const part_loadFonts = require('./webpack-part--load-fonts.js')
-const part_loadJs_BabelLoader = require('./webpack-part--load-js--babel-loader.js')
+const part_loadJs_babelLoader = require('./webpack-part--load-js--babel-loader.js')
+const part_loadJs_esbuildLoader_babelLoader = require('./webpack-part--load-js--esbuild-loader-n-babel-loader.js')
+const part_forkTsCheckerWebpackPlugin = require('./webpack-part--fork-ts-cheker-webpack-plugin.js')
 const cssloader_postcss = require('./webpack-part--cssloader--postcss/')
 
 
-const commonConfig = ({ pathToEntryFile, absPathToFonts }) => merge([
+const commonConfig = ({ pathToEntryFile, absPathToFonts, absPathToTsConfig }) => merge([
   {
     entry: [ pathToEntryFile ],
     resolve: {
@@ -29,15 +31,17 @@ const commonConfig = ({ pathToEntryFile, absPathToFonts }) => merge([
   // part_loadImages(),
   part_loadImages({ absPathToFonts }),
   part_loadFonts({ absPathToFonts }),
-  part_loadJs_BabelLoader(),
+  // part_loadJs_babelLoader(),
+  part_loadJs_esbuildLoader_babelLoader(),
 ])
 
 
-const productionConfig = merge([
+const productionConfig = () => merge([
 ])
 
 
-const developmentConfig = merge([
+const developmentConfig = ({absPathToTsConfig}) => merge([
+  part_forkTsCheckerWebpackPlugin({absPathToTsConfig}),
   part_loadCss({
     loaders: [cssloader_postcss()]
   })
@@ -50,14 +54,15 @@ const getConfig = (opts) => {
 
   const _opts = {
    ...opts,
-   absPathToFonts: path.resolve(opts.pathToEntryFile, '../..', 'fonts')
+   absPathToFonts: path.resolve(opts.pathToEntryFile, '../..', 'fonts'),
+   absPathToTsConfig: path.resolve(opts.pathToEntryFile, '..', 'tsconfig.json')
   }
 
   switch (mode) {
     case 'production':
-      return merge(commonConfig(_opts), productionConfig, {mode: !debug ? mode : 'none'})
+      return merge(commonConfig(_opts), productionConfig(_opts), {mode: !debug ? mode : 'none'})
     case 'development':
-      return merge(commonConfig(_opts), developmentConfig, {mode: !debug ? mode : 'none'})
+      return merge(commonConfig(_opts), developmentConfig(_opts), {mode: !debug ? mode : 'none'})
     default:
       throw new Error(`Trying to use an unknow mode, ${mode}`)
   }
