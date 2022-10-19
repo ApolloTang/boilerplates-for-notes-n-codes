@@ -47,7 +47,7 @@ const getConfig = (opts) => {
 
   const _opts = {
    ...opts,
-   absPathToFonts:  path.resolve(opts.pathToEntryFile, '..', 'fonts')
+   absPathToFonts:  path.resolve(opts.pathToEntryFile, '../..', 'fonts')
   }
 
   switch (mode) {
