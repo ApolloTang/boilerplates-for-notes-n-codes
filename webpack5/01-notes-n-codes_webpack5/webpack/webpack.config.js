@@ -14,6 +14,9 @@ const commonConfig = ({ pathToEntryFile, absPathToFonts }) => merge([
   {
     entry: [ pathToEntryFile ],
     resolve: {
+      alias: {
+        '~': path.resolve(pathToEntryFile, '..')
+      },
       extensions: ['*', '.ts', '.js', '...'],
       extensionAlias: {
        '.js': ['.js', '.ts'],
@@ -47,7 +50,7 @@ const getConfig = (opts) => {
 
   const _opts = {
    ...opts,
-   absPathToFonts:  path.resolve(opts.pathToEntryFile, '../..', 'fonts')
+   absPathToFonts: path.resolve(opts.pathToEntryFile, '../..', 'fonts')
   }
 
   switch (mode) {

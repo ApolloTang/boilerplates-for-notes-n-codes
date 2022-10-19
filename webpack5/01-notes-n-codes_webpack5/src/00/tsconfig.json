@@ -19,7 +19,11 @@
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "sourceMap": true,
-    "resolveJsonModule" : true
+    "resolveJsonModule" : true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["*"]
+    }
   },
-  "include": ["src"]
+  "include": ["./"]
 }
