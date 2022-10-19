@@ -1,7 +1,7 @@
 export default (text = 'Hello world') => {
   const red = document.createElement('div')
   red.textContent='red'
-  red.className='rounded bg-red-100 border max-w-md m-4 p-4'
+  red.className='red rounded bg-red-100 border max-w-md m-4 p-4'
 
   const green = document.createElement('div')
   green.textContent='green'

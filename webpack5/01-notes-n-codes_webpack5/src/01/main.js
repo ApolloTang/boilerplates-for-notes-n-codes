@@ -1,5 +1,5 @@
 import component from '~/component'
-import main from '~/main.css'
+import '~/main.css'
 
 const header = document.createElement('h1')
 header.textContent = 'app 01'
