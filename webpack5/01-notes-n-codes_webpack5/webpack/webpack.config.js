@@ -14,6 +14,7 @@ const cssloader_postcss = require('./webpack-part--cssloader--postcss/')
 
 const commonConfig = ({ pathToEntryFile, absPathToFonts, absPathToTsConfig }) => merge([
   {
+    devtool: 'inline-source-map',
     entry: [ pathToEntryFile ],
     resolve: {
       alias: {
