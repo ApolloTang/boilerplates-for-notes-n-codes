@@ -27,6 +27,9 @@ const commonConfig = ({ pathToEntryFile, absPathToFonts, absPathToTsConfig }) =>
        '.mjs': ['.mjs', '.mts']
       }
     },
+    optimization: {
+      runtimeChunk: 'single',
+    }
   },
   part_page({title:'demo'}),
   // part_loadImages(),
