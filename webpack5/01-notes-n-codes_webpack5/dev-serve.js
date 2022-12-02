@@ -37,7 +37,12 @@ function start(port, host) {
     // ...webpackConfig.devServer,
     port: port,
     host: host,
-    open: true
+    open: true,
+    hot: true, // Dev server client for web socket transport, hot and live reload logic
+    client : {
+      logging: 'info',
+      overlay: { errors: true, warnings: true }
+    }
   };
 
   const server = new WebpackDevServer(devServerOptions, webpackCompiler);
