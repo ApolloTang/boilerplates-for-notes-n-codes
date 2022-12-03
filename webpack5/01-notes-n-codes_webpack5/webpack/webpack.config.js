@@ -6,8 +6,7 @@ const part_page = require('./webpack-part--page.js')
 const part_loadCss = require('./webpack-part--load-css.js')
 const part_loadImages = require('./webpack-part--load-images.js')
 const part_loadFonts = require('./webpack-part--load-fonts.js')
-const part_loadJs_babelLoader = require('./webpack-part--load-js--babel-loader.js')
-const part_loadJs_esbuildLoader_babelLoader = require('./webpack-part--load-js--esbuild-loader-n-babel-loader.js')
+const part_loadJs_esbuildLoader_n_babelLoader = require('./webpack-part--load-js--esbuild-loader-n-babel-loader.js')
 const part_forkTsCheckerWebpackPlugin = require('./webpack-part--fork-ts-cheker-webpack-plugin.js')
 const cssloader_postcss = require('./webpack-part--cssloader--postcss/')
 
@@ -20,12 +19,12 @@ const commonConfig = ({ pathToEntryFile, absPathToFonts, absPathToTsConfig }) =>
       alias: {
         '~': path.resolve(pathToEntryFile, '..')
       },
-      extensions: ['*', '.ts', '.js', '...'],
-      extensionAlias: {
-       '.js': ['.js', '.ts'],
-       '.cjs': ['.cjs', '.cts'],
-       '.mjs': ['.mjs', '.mts']
-      }
+      extensions: ['*', '.ts', '.js', '.tsx', '.jsx', '...'],
+      // extensionAlias: {
+      //  '.js': ['.js', '.ts'],
+      //  '.cjs': ['.cjs', '.cts'],
+      //  '.mjs': ['.mjs', '.mts']
+      // }
     },
     optimization: {
       runtimeChunk: 'single',
@@ -35,8 +34,7 @@ const commonConfig = ({ pathToEntryFile, absPathToFonts, absPathToTsConfig }) =>
   // part_loadImages(),
   part_loadImages({ absPathToFonts }),
   part_loadFonts({ absPathToFonts }),
-  // part_loadJs_babelLoader(),
-  part_loadJs_esbuildLoader_babelLoader(),
+  part_loadJs_esbuildLoader_n_babelLoader(),
 ])
 
 

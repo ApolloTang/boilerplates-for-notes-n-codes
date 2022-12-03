@@ -1,9 +1,9 @@
-const loadJs_esBuildLoader_babelLoader = () => {
+const loadJs_esbuildLoader_n_babelLoader = () => {
 
   const module = {
     rules: [
       {
-        test: /\.m?(t|j)s$/,
+        test: /\.m?(t|j)sx?$/,
         use: [
           {
             loader: 'babel-loader',
@@ -11,7 +11,7 @@ const loadJs_esBuildLoader_babelLoader = () => {
           {
             loader: 'esbuild-loader',
             options: {
-              loader: 'ts',
+              loader: 'tsx',
               target: 'es2015'
             }
           },
@@ -27,4 +27,4 @@ const loadJs_esBuildLoader_babelLoader = () => {
 }
 
 
-module.exports = loadJs_esBuildLoader_babelLoader
+module.exports = loadJs_esbuildLoader_n_babelLoader
