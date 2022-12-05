@@ -8,8 +8,13 @@ module.exports = {
     'src'
   ],
 
+  transform: {
+    '\\.(js|jsx|ts|tsx)$': ['babel-jest', { configFile: './babel.config.testing.js' }] // https://github.com/facebook/jest/issues/3845#issuecomment-645298425
+  },
+
   // "testEnvironment": 'node',
   testEnvironment: 'jsdom',
+
 
   //@ Scripts to run before jest is loaded
   setupFiles: [
