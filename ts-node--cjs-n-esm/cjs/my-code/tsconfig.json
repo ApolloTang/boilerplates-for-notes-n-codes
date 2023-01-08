@@ -5,8 +5,9 @@
     "strict": true,
     "skipLibCheck": true,
 
-    "target": "ES2015",
-    "lib": ["ES6"],
-    "module": "commonjs"
+    "moduleResolution": "node",
+    "target": "ESNext",
+    "lib": ["ESNext"],
+    "module": "ESNext"
   }
 }
