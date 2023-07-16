@@ -4,41 +4,24 @@ This playground has been configure to run ts-node with ECMMAScript module, see: 
 
 
 
-## Running ts-node with nodemon
+## Development with ts-node using nodemon:
 
-Make sure `ts-node` and `nodemon` is installed globally, and you are using node version 18:
-
-```
-nvm use 18
-cd my-code
-nodemon -w ./foo.ts -x ts-node ./foo.ts
+```bash
+./tsnode-dev.sh ./src/foo.ts
 ```
 
-### To run ts-node despite of type error: 
-
-**To execute despite of typescript error:**  add`--logError` before your entry file:
-
-```
-nodemon -w ./foo.ts -x ts-node --logError ./foo.ts
-```
-
-**To execute but silence typescript error:**  add`-T` before your entry file:
-
-```
-nodemon -w ./foo.ts -x ts-node -T ./foo.ts
-```
-
-The `-T ` is short for `--transpileOnly
-
-Reference:
-
-[https://stackoverflow.com/questions/60726445/how-to-use-ts-node-regardless-of-errors](https://stackoverflow.com/questions/60726445/how-to-use-ts-node-regardless-of-errors)
+The above will run `ts-node` on `./src/foo.ts` and watch `src/` folder.
 
 
 
 ## Transpile to commonjs and run with node.  
 
-To run the code with node, you have to transpile it with `tsc` and *rename the output file extension to `.cjs`*:
+To run the code with node, you have to transpile it with tsc and rename the output file extension to .cjs: 
+
+1. Open a terminal window and navigate to the directory containing the code.
+2. Run the command `tsc <filename>.ts` to transpile the code.
+3. Rename the output file extension from .js to .cjs.
+4. Run the command `node <filename>.cjs` to execute the code.
 
 ```
 nvm use 18
